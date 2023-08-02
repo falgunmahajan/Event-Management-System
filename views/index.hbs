@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/index.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container-fluid main">
+<nav class="navbar navbar-expand-lg  navbar-dark py-4">
+  <div class="container">
+    <a class="navbar-brand" href="#"><h3 class=" fw-bold  head px-3">Event Management</h3></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"><h5>Home</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#service"><h5>Services</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about"><h5>About us</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="/signup"><h5>Sign Up</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/login"><h5>Login</h5></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container mt-5 d-flex flex-column justify-content-center align-items-center"> 
+  <div class="row mt-5 pt-5 text-white">
+    <h1 class="display-1">Welcome to Event Management</h1>
+  </div>
+  <div class="row mt-3 text-white">
+    <h4>Find the Perfect Services For Your Special Occasions</h4>
+    
+  </div>
+</div>
+  </div>
+  
+
+
+  
+  <div class="container-fluid mt-5">
+<div class="row " id="service"><h1 class="text-center ">Service Categories</h1></div>
+<div class="row  row-cols-1 row-cols-md-4 vw-75  mb-5  mx-5 ps-5">
+  {{#each services}}
+        <div class="col mb-3 mt-4">
+          <div class="card" style="width: 20rem;" onclick="location.href='/customer/services?service={{this.Name}}'">
+            <img src="{{this.Image_url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h4 class="card-title text-center">{{this.Name}}</h4>
+            </div>
+          </div>
+        </div>
+         {{/each}}
+       
+      </div> 
+</div>
+<div class=" container-fluid mt-5">
+  <div class="row mb-3" id="about"><h1 class="text-center ">About Us</h1></div>
+  <div class="row mb-5 about"><div class="col-10 m-auto fs-5">In a world where events hold immense significance in both personal and professional realms, the process of planning and booking services can often be overwhelming. <br><br>
+Event Management is a comprehensive platform aims to bridge this gap by offering a streamlined ecosystem that connects customers seeking event services with reliable and skilled service providers. <br><br>
+For customers, we provide a one-stop destination to discover and book, a wide range of services related to events like weddings, college farewells, birthdays, and conference meetings. <br><br>
+On the other side, service providers have the opportunity to showcase their offerings to a diverse customer base. Through our platform, providers can efficiently add their services and view customer booking. <br><br>
+
+
+  </div></div>
+</div>
+ {{>footer}}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

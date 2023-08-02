@@ -1,0 +1,31 @@
+body{
+    font-family: 'Playfair Display', serif;
+}
+/* .navbar,.footer,.sign{
+    background-color: skyblue;
+} */
+.main
+{
+    /* height:90vh; */
+/* background-image:url(../Images/event.jpg);
+background-size:cover; */
+}
+.footer, .navbar
+{
+    background-image: url(../Images/footerBackground.jpeg);
+    background-size:cover;
+}
+
+.signIn
+{
+/* background-color:skyblue; */
+background-image: url(../Images/footerBackground.jpeg);
+background-size:cover;
+/* border-radius:5px; */
+padding:20px;
+/* height:330px; */
+}
+.foremail,.forpwd,.forrole
+{
+display:none;
+}

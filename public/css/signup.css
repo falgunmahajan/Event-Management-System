@@ -1,0 +1,26 @@
+body{
+    font-family: 'Playfair Display', serif;
+}
+
+.footer, .navbar
+{
+    background-image: url(../Images/footerBackground.jpeg);
+    background-size:cover;
+}
+.registration
+{
+    background-image: url(../Images/footerBackground.jpeg);
+background-size:cover;
+padding:20px;
+/* background-color:#0000009e; */
+/* border-radius:5px; */
+}
+.foremail,.forpwd,.forname,.forlname,.forcontact,.forrole
+{
+display:none;
+}
+.display-4
+{
+margin-top:20px;
+color:crimson;
+}

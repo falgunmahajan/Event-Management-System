@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
+   
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-dark py-3 mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h3 class=" fw-bold text-white head px-3">Event Management</h3>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">
+                            <h5>Sign Out</h5>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-2 me-2 ">
+               <h2>Filters</h2> 
+            </div>
+            <div class="col-9">
+                <h2 class="text-center  mb-3">Catering Services</h2>
+            </div>
+            <div class="col-2 sidebar me-2" >
+                </div>    
+            
+            <div class="col-9 data overflow-x-auto">
+                <div class="alert alert-danger d-none error" role="alert">End Date cannot be less than or equal to start date</div>
+                <form action="/bookService" method="post" class="border mb-3 p-3" >
+                <div class="mx-5 px-5 d-flex form flex-wrap">
+               <div class="m-3">
+               <label class=" me-3 d-flex flex-column">Enter Location</label>
+               <input type="text" class="location"  placeholder="Enter Location" style="width:300px;"></div>
+               <div class="m-3 d-flex flex-column">
+                <label class=" me-3 d-flex flex-column">Number of packet per day</label>
+               <input type="text" class="noOfPlates" style="width:300px;"></div>
+               <div class="m-3">
+                <label class=" me-3 d-flex flex-column">Enter Start Date</label>
+               <input type="date" class="start" onchange="checkDate()" style="width:300px;"></div>
+                 <div class="m-3 ">
+                <label class=" me-3 d-flex flex-column">Enter End Date</label>
+               <input type="date" class="end" onchange="checkDate()" style="width:300px;"></div> 
+               </div>
+               <div class="btn btn-primary btn-lg m-3 mt-5" onclick="searchRecord()">Search</div>
+                <button type="submit" class="btn btn-primary btn-lg m-3 mt-5">Submit</button>
+               </form>
+                <table class="table table-bordered ">
+                    <thead>
+                     
+                    </thead>
+                    <tbody class="tbody">
+                      
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+<script src="../static/js/cateringShow.js" ></script>
+
+</html>

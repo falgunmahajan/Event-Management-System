@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/adminPanel.css">
+</head>
+<body>
+    <div class="container">
+         {{#if msg}}
+      <div class="alert alert-success my-3" role="alert">
+{{msg}}
+</div>
+         {{/if}}
+        <div class="row addServiceForm mt-4">
+            <div class="col-md-4 mainDiv border m-auto">
+            <h3 class="text-center text-secondary mb-4 mt-4">Add Options</h3>
+<form action="/admin/dashboard/addOptions" method="post">
+<label>Services</label>
+<select class="form-select mb-3" aria-label="Default select example" name="Category">
+    <option selected>choose Services</option>
+    {{#each parameters}}
+     <option value={{this.Category}}>{{this.Category}}</option>
+    {{/each}}
+
+  </select>
+  <label>Parameters</label>
+  <select class="form-select mb-3" aria-label="Default select example" name="Parameters">
+    <option selected>choose Parameters</option>
+    {{#each parameters}}
+    {{#each Parameter}}
+     <option value="{{this.value}}">{{this.value}}</option>
+    {{/each}}
+    {{/each}}
+  </select>
+
+  <label>Options</label>
+  <div class="options">
+  <input class="form-control form-control-sm mb-3" type="text" aria-label=".form-control-sm example" name="Options">
+</div>
+  <button type="button" class="btn addOptions btn-primary mb-4">Add Option<svg xmlns="http://www.w3.org/2000/svg" width="20"
+    height="20" fill="white" class="bi bi-plus" viewBox="0 0 16 16">
+    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+  </svg></button>
+  <br>
+  <button type="submit" class="btn w-100 btn-primary mt-4 mb-4">Submit</button>
+</form>
+</div>
+</div>
+</body>
+<script src="../../static/js/adminAddOptions.js"></script>
+</html>

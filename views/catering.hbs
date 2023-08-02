@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+          <link rel="stylesheet" href="static/css/style.css">
+
+  <link rel="stylesheet" href="../static/css/CateringForm.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg  navbar-dark py-3 mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="#"><h3 class=" fw-bold text-white head px-3">Event Management</h3></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link"  href="/signup"><h5>Sign Out</h5></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+
+  <div class="container  mt-0" >
+    <div class="row ">
+      <div class="col-4 m-auto cateringform">
+     <form action="/catering" method="post" class="bg-white p-4 my-2 me-2">
+<h1 class="text-center">Fill Catering Fields</h1>
+    <div class="data" id="preparationDiv" onchange="main()">
+      <label class="mb-2"><strong>Type of Preparation</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="Veg" name="TypeofPreparation" id="preparationVeg">
+        <label class="form-check-label" for="preparationVeg">
+          Veg
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="Non veg" name="TypeofPreparation"
+          id="preparationNonVeg">
+        <label class="form-check-label" for="preparationNonVeg">
+          Non veg
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="Jain" name="TypeofPreparation" id="preparationJain">
+        <label class="form-check-label" for="preparationJain">
+          Jain
+        </label>
+      </div>
+    </div>
+    <div class="data" id="spreadDiv" onchange="main()">
+      <label class="mt-2 mb-2"><strong>Type Of Spread</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="Breakfast" name="TypeOfSpread" id="spreadBreakfast">
+        <label class="form-check-label" for="spreadBreakfast">
+          Breakfast
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" name="TypeOfSpread" type="checkbox" value="Lunch" id="spreadLunch">
+        <label class="form-check-label" for="spreadLunch">
+          Lunch
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" name="TypeOfSpread" type="checkbox" value="Snacks/ High Tea"
+          id="spreadSnacks">
+        <label class="form-check-label" for="spreadSnacks">
+          Snacks/ High Tea
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" name="TypeOfSpread" type="checkbox" value="Dinner" id="spreadDinner">
+        <label class="form-check-label" for="spreadDinner">
+          Dinner
+        </label>
+      </div>
+    </div>
+    <div class="data" id="spreadBifurcationDiv" onchange="main()">
+      <label class="mt-2 mb-2"><strong>Spread Bifurcation</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="Regular Packet" name="SpreadBifurcation"
+          id="Regular Packet">
+        <label class="form-check-label" for="  Regular Packet">
+          Regular Packet
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="Special Packet" name="SpreadBifurcation"
+          id="Special Packet">
+        <label class="form-check-label" for=" Special Packet">
+          Special Packet
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="Regular Buffet" name="SpreadBifurcation"
+          id="Regular Buffet">
+        <label class="form-check-label" for=" Regular Buffet">
+          Regular Buffet
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="Special Buffet" name="SpreadBifurcation"
+          id="Special Buffet">
+        <label class="form-check-label" for=" Special Buffet">
+          Special Buffet
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="SpreadBifurcation" type="checkbox" value="Mini Thali" id=" Mini Thali">
+        <label class="form-check-label" for=" Mini Thali">
+          Mini Thali
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="SpreadBifurcation" type="checkbox" value="Regular Thali" id=" Regular Thali">
+        <label class="form-check-label" for="Regular Thali">
+          Regular Thali
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="SpreadBifurcation" type="checkbox" value="Special Thali" id=" Special Thali">
+        <label class="form-check-label" for=" Special Thali">
+          Special Thali
+        </label>
+      </div>
+    
+      <div class="form-check">
+        <input class="form-check-input" name="SpreadBifurcation" type="checkbox" value="Regular High Tea" id="Regular High Tea">
+        <label class="form-check-label" for="  Regular High Tea">
+          Regular High Tea
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="SpreadBifurcation" type="checkbox" value="Special High Tea" id="Special High Tea">
+        <label class="form-check-label" for="Special High Tea">
+          Special High Tea
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="SpreadBifurcation" type="checkbox" value="Tea Buffet" id="Tea Buffet">
+        <label class="form-check-label" for="  Tea Buffet">
+          Tea Buffet
+        </label>
+      </div>
+      <label class="mt-2"><strong>Price Per Item</strong></label>
+      <input class="form-control price form-control-sm" name="spreadPrice" type="text" aria-label=".form-control-sm example" onblur="priceValidation()">
+      <span class="text-danger span" id="spreadPrice" >*please enter a valid price</span>
+    </div>
+    <div class="data" id="softDrinksDiv" onchange="main()">
+      <label class="mt-2 mb-2"><strong>Soft Drinks</strong> </label>
+      <div class="form-check">
+        <input class="form-check-input" name="SoftDrinks" type="checkbox" value="Yes" id="Soft Drinks Yes">
+        <label class="form-check-label" for="Soft Drinks Yes">
+          Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="SoftDrinks" type="checkbox" value="No" id="Soft Drinks No">
+        <label class="form-check-label" for="Soft Drinks No">
+          No
+        </label>
+      </div>
+
+      <label class="mt-2"><strong>Price Per Item</strong></label>
+      <input class="form-control  price form-control-sm" name="Soft_DrinksPrice" type="text" aria-label=".form-control-sm example" onchange="priceValidation()">
+      <span class="text-danger span" id="Soft_DrinksPrice">*please enter a valid price</span>
+    </div>
+    <div class="data" id="crockeryDiv" onchange="main()">
+      <label class="mb-2 mt-2"><strong>Crockery Preferences</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" name="CrockeryPreferences" type="checkbox" value="Bone china"
+          id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Bone china
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="CrockeryPreferences" type="checkbox" value="Ceramic"
+          id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Ceramic
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="CrockeryPreferences" type="checkbox" value="Melamine"
+          id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Melamine
+        </label>
+      </div>
+
+      <label class="mt-2"><strong>Price Per Item</strong></label>
+      <input class="form-control price  form-control-sm" name="CrockeryPrice" type="text"
+        aria-label=".form-control-sm example" onchange="priceValidation()">
+        <span class="text-danger span" id="CrockeryPrice">*please enter a valid price</span>
+    </div>
+    <div class="data" id="Non-vegSnackDiv" onchange="main()">
+      <label class="mb-2 mt-2"><strong>Non-veg Snack</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" name="NonvegSnack" type="checkbox" value="Yes" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="NonvegSnack" type="checkbox" value="No" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          No
+        </label>
+      </div>
+
+      <label class="mt-2"><strong>Price Per Item</strong></label>
+      <input class="form-control price form-control-sm" name="Non_veg_Snack_Price" type="text"
+        aria-label=".form-control-sm example" onchange="priceValidation()">
+        <span class="text-danger span" id="Non_veg_Snack_Price">*please enter a valid price</span>
+    </div>
+    <div class="data" id="desertsDiv" onchange="main()">
+      <label class="mb-2 mt-2"><strong>Deserts</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" name="Deserts" type="checkbox" value="Yes" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="Deserts" type="checkbox" value="No" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          No
+        </label>
+      </div>
+
+      <label class="mt-2"><strong>Price Per Item</strong></label>
+      <input class="form-control price form-control-sm" name="Deserts_Price" type="text"
+        aria-label=".form-control-sm example" onchange="priceValidation()">
+        <span class="text-danger span" id="Deserts_Price">*please enter a valid price</span>
+    </div>
+    <div class="data" id="VegDishDiv" onchange="main()">
+      <label class="mb-2 mt-2"><strong>Veg Dish</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" name="VegDish" type="checkbox" value="Yes" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="VegDish" type="checkbox" value="No" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          No
+        </label>
+      </div>
+
+      <label class="mt-2"><strong>Price Per Item</strong></label>
+      <input class="form-control price form-control-sm" name="VegDish_Price" type="text"
+        aria-label=".form-control-sm example" onchange="priceValidation()">
+        <span class="text-danger span" id="VegDish_Price">*please enter a valid price</span>
+    </div>
+    <div class="data" id="NonVegDishDiv" onchange="main()">
+      <label class="mb-2 mt-2"><strong>Non-Veg Dish</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" name="Non_VegDish" type="checkbox" value="Yes" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Yes
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" name="Non_VegDish" type="checkbox" value="No" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          No
+        </label>
+      </div>
+
+      <label class="mt-2"><strong>Price Per Item</strong></label>
+      <input class="form-control price form-control-sm" name="NonVegDish_Price" type="text"
+        aria-label=".form-control-sm example" onchange="priceValidation()">
+        <span class="text-danger span" id="NonVegDish_Price">*please enter a valid price</span>
+    </div>
+    <div class="data" id="VegSnackDiv" onchange="main()">
+      <label class="mb-2 mt-2"><strong>Veg Snack</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" name="VegSnack" type="checkbox" value="Yes" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="VegSnack" type="checkbox" value="No" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          No
+        </label>
+      </div>
+
+      <label class="mt-2"><strong>Price Per Item</strong></label>
+      <input class="form-control price form-control-sm" name="VegSnack_Price" type="text"
+        aria-label=".form-control-sm example" onchange="priceValidation()">
+        <span class="text-danger span" id="VegSnack_Price">*please enter a valid price</span>
+    </div>
+    <div class="data" id="waterDiv" onchange="main()">
+      <label class="mb-2 mt-2"><strong>Water</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" name="Water" type="checkbox" value="Yes" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="Water" type="checkbox" value="No" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          No
+        </label>
+      </div>
+
+      <label class="mt-2"><strong>Price Per Item</strong></label>
+      <input class="form-control price form-control-sm" name="Water_Price" type="text"
+        aria-label=".form-control-sm example" onchange="priceValidation()">
+        <span class="text-danger span" id="Water_Price">*please enter a valid price</span>
+    </div>
+    <div class="data" id="juiceDiv" onchange="main()">
+      <label class="mb-2 mt-2"><strong>Fresh Canned Juice</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" name="FreshCannedJuice" type="checkbox" value="Yes">
+        <label class="form-check-label">
+          Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="FreshCannedJuice" type="checkbox" value="No" id="flexCheckDefault">
+        <label class="form-check-label">
+          No
+        </label>
+      </div>
+
+      <label class="mt-2"><strong>Price Per Item</strong></label>
+      <input class="form-control price  form-control-sm" name="Juice_Price" type="text"
+        aria-label=".form-control-sm example" onchange="priceValidation()">
+        <span class="text-danger span" id="Juice_Price">*please enter a valid price</span>
+    </div>
+
+    <div class="savebtn text-center">
+      <button type="submit" onclick="return validation()" class="btn btn-danger savebtn mt-4">Submit</button>
+    </div>
+    </form>
+  </div>
+</div>
+</div>
+{{>footer}}
+  <script src="../static/js/cateringFormScript.js"></script>
+</body>
+
+</html>

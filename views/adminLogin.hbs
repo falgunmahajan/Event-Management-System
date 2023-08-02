@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Playfair+Display:ital@1&display=swap"
+    rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Management System</title>
+  <link rel="stylesheet" href="static/css/login.css">
+</head>
+
+<body>
+ <nav class="navbar navbar-expand-lg  navbar-dark py-3">
+  <div class="container">
+    <a class="navbar-brand" href="#"><h3 class=" fw-bold text-white head px-3">Event Management</h3></a>
+    
+    </div>
+</nav>
+
+  <div class="container-fluid main ps-0 pe-0">
+    <div class="row mt-5 pt-4 text-center">
+      {{!-- <h1 class="display-4 fw-bolder mt-5 mb-4 pt-5">Sign In</h1> --}}
+      <div class="col-lg-4 offset-lg-4 mt-5 signIn ">
+        <form action="/admin" method="post" class="bg-white p-4 my-2">
+        <div class="col mb-3">
+          <h1 class="display-5 fw-bolder mb-4">Sign In</h1>
+         
+        </div>
+        <div class="form-group text-start mb-3 mt-4">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Email"
+            placeholder="Enter email">
+          <span class="foremail text-danger">Please enter a valid email</span>
+        </div>
+        <div class="form-group text-start">
+
+          <input type="password" class="form-control" id="exampleInputPassword1" name="Password" placeholder="Password">
+          <span class="forpwd text-danger"> Password must be atleast 8 characters long</span>
+        </div>
+        <button class="btn sign  mt-4 mb-4 w-100 btn-danger">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+ {{>footer}}
+  <script src="../js/signin.js"></script>
+</body>
+
+</html>
