@@ -12,43 +12,67 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Management System</title>
-  <link rel="stylesheet" href="static/css/login.css">
+  <link rel="stylesheet" href="../static/css/login.css">
 </head>
 
 <body>
- <nav class="navbar navbar-expand-lg  navbar-dark py-3">
-  <div class="container">
-    <a class="navbar-brand" href="#"><h3 class=" fw-bold text-white head px-3">Event Management</h3></a>
-    
+  <nav class="navbar navbar-expand-lg  navbar-dark py-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <h3 class=" fw-bold text-white head px-3">Event Management</h3>
+      </a>
+ <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " href="/admin"><h3>SignIn</h3></a>
+        </li>
+      </ul>
     </div>
-</nav>
+    </div>
+  </nav>
 
-  <div class="container-fluid main ps-0 pe-0">
-    <div class="row mt-5 pt-4 text-center">
+  <div class="container-fluid">
+   
+    <div class="row my-5 py-4 text-center">
+        {{#if emptymsg}}
+        <div class="row ">
+           <div class="col-lg-4 offset-lg-4 mt-3 alert alert-danger" role="alert">All Fields are required</div>  
+        </div>
+        {{/if}}
+        {{#if errormsg}}
+        <div class="row ">
+           <div class="col-lg-4 offset-lg-4 mt-3 alert alert-danger" role="alert">Incorrect Email or password</div>  
+        </div>
+        {{/if}}
       {{!-- <h1 class="display-4 fw-bolder mt-5 mb-4 pt-5">Sign In</h1> --}}
-      <div class="col-lg-4 offset-lg-4 mt-5 signIn ">
+      <div class="col-lg-4 offset-lg-4 mb-5 signIn ">
         <form action="/admin" method="post" class="bg-white p-4 my-2">
-        <div class="col mb-3">
-          <h1 class="display-5 fw-bolder mb-4">Sign In</h1>
-         
-        </div>
-        <div class="form-group text-start mb-3 mt-4">
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Email"
-            placeholder="Enter email">
-          <span class="foremail text-danger">Please enter a valid email</span>
-        </div>
-        <div class="form-group text-start">
+          <div class="col mb-3">
+            <h1 class="display-5 fw-bolder mb-4">Sign In</h1>
 
-          <input type="password" class="form-control" id="exampleInputPassword1" name="Password" placeholder="Password">
-          <span class="forpwd text-danger"> Password must be atleast 8 characters long</span>
-        </div>
-        <button class="btn sign  mt-4 mb-4 w-100 btn-danger">Sign In</button>
+          </div>
+          <div class="form-group text-start mb-3 mt-4">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Email"
+              placeholder="Enter email">
+            <span class="foremail text-danger">Please enter a valid email</span>
+          </div>
+          <div class="form-group text-start">
+
+            <input type="password" class="form-control" id="exampleInputPassword1" name="Password"
+              placeholder="Password">
+            <span class="forpwd text-danger"> Password must be atleast 8 characters long</span>
+          </div>
+          <button class="btn sign  mt-4 mb-4 w-100 btn-danger">Sign In</button>
         </form>
       </div>
     </div>
   </div>
- {{>footer}}
-  <script src="../js/signin.js"></script>
+  {{>footer}}
+  {{!--
+  <script src="../js/signin.js"></script> --}}
 </body>
 
 </html>

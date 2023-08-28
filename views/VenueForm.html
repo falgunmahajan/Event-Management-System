@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="VenueForm.css">
+</head>
+
+<body>
+  <div class="container mt-4 mb-4">
+    <div class="row">
+      <div class="col-lg-5 m-auto border p-3">
+        <form>
+          <h1 class="text-center">Fill Venue Fields</h1>
+          <div class="data">
+            <div class="location_capacity">
+              <label>
+                <strong>
+                  Location
+                </strong>
+              </label>
+              <input class="form-control mb-2" type="text" placeholder="" aria-label="default input example"
+                onblur="Location()">
+              <span class="text-danger span">*please enter a valid location</span>
+              <label>
+                <strong>
+                  Capacity
+                </strong>
+              </label>
+              <input class="form-control mb-2" type="text" placeholder="" aria-label="default input example"
+                onblur="Capacity()">
+              <span class="text-danger span">*please enter a valid capacity</span>
+            </div>
+          </div>
+          <div id="Venue_Type" class="data" onchange="main()">
+            <label>
+              <strong>
+                Venue Type
+              </strong>
+            </label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Banquet Halls" name="Venue_Type"
+                id="Banquet_Halls">
+              <label class="form-check-label">
+                Banquet halls
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Hotels" name="Venue_Type" id="Hotels">
+              <label class="form-check-label">
+                Hotels
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Outdoor Spaces" name="Venue_Type"
+                id="Outdoor_Spaces">
+              <label class="form-check-label">
+                Outdoor Spaces
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Conference Centers" name="Venue_Type"
+                id="Conference_Centers">
+              <label class="form-check-label">
+                Conference Centers
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Restraunts" name="Venue_Type" id="Restraunts">
+              <label class="form-check-label mb-2">
+                Restraunts
+              </label>
+            </div>
+            <label>
+              <strong>
+                Price
+              </strong>
+            </label>
+            <input class="form-control mb-2 price" type="text" placeholder="" name="VenueTypePrice"
+              onblur="priceValidation()" aria-label="default input example">
+            <span class="text-danger span" id="VenueTypePrice">*please enter a valid price</span>
+          </div>
+          <div id="Wi_Fi" class="data" onchange="main()">
+            <label>
+              <strong>
+                Wi-Fi
+              </strong>
+            </label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Yes" name="Wi-Fi" id="Wifi_Yes">
+              <label class="form-check-label">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="No" name="Wi-Fi" id="Wifi_No">
+              <label class="form-check-label mb-2">
+                No
+              </label>
+            </div>
+            <label>
+              <strong>
+                Price
+              </strong>
+            </label>
+            <input class="form-control mb-2 price" type="text" placeholder="" name="WifiPrice"
+              onblur="priceValidation()" aria-label="default input example">
+            <span class="text-danger span" id="WifiPrice">*please enter a valid price</span>
+          </div>
+          <div id="catering" class="data" onchange="main()">
+            <label>
+              <strong>
+                Catering Service
+              </strong>
+            </label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Yes" name="Catering_Service" id="Catering_Yes">
+              <label class="form-check-label">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="No" name="Catering_Service" id="Catering_No">
+              <label class="form-check-label mb-2" for="preparationJain">
+                No
+              </label>
+            </div>
+            <label>
+              <strong>
+                Price
+              </strong>
+            </label>
+            <input class="form-control mb-2 price" type="text" placeholder="" name="cateringPrice"
+              onblur="priceValidation()" aria-label="default input example">
+            <span class="text-danger span" id="cateringPrice">*please enter a valid price</span>
+          </div>
+          <div id="Parking" class="data" onchange="main()">
+            <label>
+              <strong>
+                Parking Availability
+              </strong>
+            </label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Yes" name="Parking" id="Parking_Yes">
+              <label class="form-check-label" for="preparationJain">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="No" name="Parking" id="Parking_No">
+              <label class="form-check-label mb-2" for="preparationJain">
+                No
+              </label>
+            </div>
+            <label>
+              <strong>
+                Price
+              </strong>
+            </label>
+            <input class="form-control mb-2 price" type="text" placeholder="" name="parkingPrice"
+              onblur="priceValidation()" aria-label="default input example">
+            <span class="text-danger span" id="parkingPrice">*please enter a valid price</span>
+          </div>
+          <div id="AudioEquipment" class="data" onchange="main()">
+            <label>
+              <strong>
+                Audio/Visual Equipment
+              </strong>
+            </label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Yes" name="Audio_Equipment" id="Audio_Yes">
+              <label class="form-check-label" for="preparationJain">
+                Yes
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="No" name="Audio_Equipment" id="Audio_No">
+              <label class="form-check-label mb-2">
+                No
+              </label>
+            </div>
+            <label>
+              <strong>
+                Price
+              </strong>
+            </label>
+            <input class="form-control mb-2 price" type="text" placeholder="" name="audioPrice"
+              onblur="priceValidation()" aria-label="default input example">
+            <span class="text-danger span" id="audioPrice">*please enter a valid price</span>
+          </div>
+          <div id="WheelChair" class="data" onchange="main()">
+          <label>
+            <strong>
+              WheelChair Ramps
+            </strong>
+          </label>
+          <div class="form-check">
+            <input class="form-check-input  Accessibility" type="checkbox" name="WheelChairRamps"
+              id="WheelChairRamps_Yes" value="Yes">
+            <label class="form-check-label">
+              Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input  Accessibility" type="checkbox" value="No" name="WheelChairRamps"
+              id="WheelChairRamps_No">
+            <label class="form-check-label">
+              No
+            </label>
+          </div>
+          <label>
+            <strong>
+              Price
+            </strong>
+          </label>
+          <input class="form-control mb-2 price" type="text" placeholder="" name="WheelChairPrice"
+            onblur="priceValidation()" aria-label="default input example">
+          <span class="text-danger span" id="WheelChairPrice">*please enter a valid price</span>
+        </div>
+        <div id="Elevators" class="data" onchange="main()">
+          <label>
+            <strong>
+              Elevators
+            </strong>
+          </label>
+          <div class="form-check">
+            <input class="form-check-input  Accessibility" type="checkbox" value="Yes" name="Elevators"
+              id="Elevators_Yes">
+            <label class="form-check-label mb-2">
+              Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input  Accessibility" type="checkbox" value="No" name="Elevators_No"
+              id="Restrooms">
+            <label class="form-check-label mb-2">
+              No
+            </label>
+          </div>
+          <input class="form-control mb-2 price" type="text" placeholder="" name="ElevatorsPrice"
+          onblur="priceValidation()" aria-label="default input example">
+        <span class="text-danger span" id="ElevatorsPrice">*please enter a valid price</span>
+      </div>
+      <div id="Restrooms" class="data" onchange="main()">
+          <label>
+            <strong>
+              Restrooms
+            </strong>
+          </label>
+          <div class="form-check">
+            <input class="form-check-input  Accessibility" type="checkbox" value="Yes" name="Restrooms"
+              id="Restrooms_Yes">
+            <label class="form-check-label mb-2">
+              Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input  Accessibility" type="checkbox" value="No" name="Restrooms"
+              id="Restrooms_No">
+            <label class="form-check-label mb-2">
+              No
+            </label>
+          </div>
+          
+          <label>
+            <strong>
+              Price
+            </strong>
+          </label>
+          <input class="form-control mb-2 price" type="text" placeholder="" name="RestroomsPrice"
+            onblur="priceValidation()" aria-label="default input example">
+          <span class="text-danger span" id="RestroomsPrice">*please enter a valid price</span>
+         </div>
+          <div id="Decoration" class="data" onchange="main()">
+
+            <label>
+              <strong>
+                Decoration
+              </strong>
+            </label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Yes" name="Decoration" id="Decoration_Yes">
+              <label class="form-check-label" for="preparationJain">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="No" name="Decoration" id="Decoration_No">
+              <label class="form-check-label mb-2" for="preparationJain">
+                No
+              </label>
+            </div>
+            <label>
+              <strong>
+                Price
+              </strong>
+            </label>
+            <input class="form-control price" type="text" placeholder="" name="DecorationPrice"
+              onblur="priceValidation()" aria-label="default input example">
+            <span class="text-danger span" id="DecorationPrice">*please enter a valid price</span>
+          </div>
+        </form>
+        <div class="savebtn text-center ">
+          <button type="submit" onclick="return validation()" class="btn btn-primary savebtn w-50 mt-4">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="VenueForm.js"></script>
+</body>
+
+</html>

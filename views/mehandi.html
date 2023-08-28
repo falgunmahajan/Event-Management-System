@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="VenueForm.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-4 mb-4">
+        <div class="row">
+       <div class="col-lg-5 m-auto border p-3">
+<form action="/decoration" method="post">
+<h1 class="text-center">Fill Mehandi Fields</h1>
+<div id="MehandiStyle" class="data" onchange="main()">
+<label>
+<strong>
+    Mehndi Style 
+</strong>
+</label>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Traditional Indian/Pakistani" name="MehandiStyle" id="Traditional">
+    <label class="form-check-label mb-2">
+        Traditional Indian/Pakistani
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Arabic" name="MehandiStyle" id="Arabic">
+    <label class="form-check-label mb-2" for="preparationJain">
+        Arabic
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Moroccan" name="MehandiStyle" id="Moroccan">
+    <label class="form-check-label mb-2" for="preparationJain">
+        Moroccan
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Indo-Arabic Fusion" name="MehandiStyle" id="IndoArabic">
+    <label class="form-check-label mb-2" for="preparationJain">
+        Indo-Arabic Fusion
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Contemporary/Modern" name="MehandiStyle" id="Modern">
+    <label class="form-check-label mb-2" for="preparationJain">
+        Contemporary/Modern
+    </label>
+  </div>
+  
+</div>
+<div id="OccasionType" class="data" onchange="main()">
+  <label>
+    <strong>
+        Occasion Type
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Bridal Mehndi" name="OccasionType" id="BridalMehndi">
+    <label class="form-check-label mb-2">
+        Bridal Mehndi
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value=" Wedding Guests" name="OccasionType" id=" WeddingGuests">
+    <label class="form-check-label mb-2">
+        Wedding Guests
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Festivals (Eid, Diwali, etc.)" name="OccasionType" id=" Festivals">
+    <label class="form-check-label mb-2">
+        Festivals (Eid, Diwali, etc.)
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Parties/Events" name="OccasionType" id="Parties">
+    <label class="form-check-label mb-2">
+        Parties/Events
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Casual Mehndi" name="OccasionType" id="CasualMehndi">
+    <label class="form-check-label mb-2">
+        Casual Mehndi
+    </label>
+  </div>
+  </div>
+  <div id="DesignComplexity" class="data" onchange="main()">
+  <label>
+    <strong>
+        Design Complexity
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Elaborate and Intricate" name="DesignComplexity" id="Elaborate">
+    <label class="form-check-label mb-2">
+        Elaborate and Intricate
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Simple and Minimalistic" name="DesignComplexity" id="Simple">
+    <label class="form-check-label mb-2">
+        Simple and Minimalistic
+    </label>
+  </div>
+  
+  </div>
+  <div id="AreaCoverage" class="data" onchange="main()">
+  <label>
+    <strong>
+        Body Area Coverage
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Hands Only" name="AreaCoverage" id="HandsOnly">
+    <label class="form-check-label mb-2" for="preparationJain">
+        Hands Only
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Hands and Feet" name="AreaCoverage" id="HandsFeet">
+    <label class="form-check-label mb-2" for="preparationJain">
+        Hands and Feet
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Full Arms" name="AreaCoverage" id="FullArms">
+    <label class="form-check-label mb-2" for="preparationJain">
+        Full Arms
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Full Feet" name="AreaCoverage" id="FullFeet">
+    <label class="form-check-label mb-2" for="preparationJain">
+        Full Feet
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Full Legs" name="VenueSize" id="FullLegs">
+    <label class="form-check-label mb-2" for="preparationJain">
+       Full Legs
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Partial Legs" name="VenueSize" id="PartialLegs">
+    <label class="form-check-label mb-2" for="preparationJain">
+       Partial Legs
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Back" name="VenueSize" id="Back">
+    <label class="form-check-label mb-2" for="preparationJain">
+        Back
+    </label>
+  </div>
+  <label>
+    <strong>
+    Price
+    </strong>
+  </label>
+  <input class="form-control mb-2 price" type="text" placeholder="" name="VenueTypePrice" onblur="priceValidation()"aria-label="default input example"> 
+  <span class="text-danger span" id="VenueTypePrice">*please enter a valid price</span>
+  </div>
+
+  <div id="Location" class="data" onchange="main()">
+    <label>
+        <strong>
+            Location
+        </strong>
+    </label>  
+    <input class="form-control " type="text" placeholder="" aria-label="default input example"
+onblur="Location()">
+<span class="text-danger span">*please enter a valid location</span>
+<label> 
+</div>
+
+<div class="savebtn text-center ">
+  <button type="submit" onclick="return validation()" class="btn btn-primary savebtn w-50 mt-4">Submit</button>
+</div>
+</div>
+</div>
+</div>
+</form>
+<script src="DecorationForm.js"></script>
+</body>
+</html>

@@ -9,6 +9,16 @@ const cateringSchema=new mongoose.Schema({
       ref: "service providers",
       required:true
     },
+    Location:{
+        value:{
+            type:Object,
+            required:true
+        },
+        price:{
+            type:Number,
+            required:true
+        }
+    },
     TypeOfPreparation:{
         type:String,
         required:true

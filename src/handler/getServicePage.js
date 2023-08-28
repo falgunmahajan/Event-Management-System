@@ -1,9 +1,18 @@
+const { State } = require("country-state-city");
 const  {serviceModel, parameterModel } = require("../models/adminSchema");
+const { serviceProvider } = require("../models/usermodel");
 const getServicePage=async(req,res)=>{
+    console.log(req.user)
     let query=req.query.service;
+    console.log(req.user._id)
+    await serviceProvider.findByIdAndUpdate(req.user._id,{$set:{Service:query}})
+    
+    let states=State.getStatesOfCountry("IN")
    if(query)
    {
-       res.render(query)
+       res.render(query,{
+        states:states
+       })
    }
    else{
     const services = await serviceModel.find({})

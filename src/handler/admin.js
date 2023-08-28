@@ -1,4 +1,7 @@
+const { BookedCustomer } = require("../models/BookedCustomerSchema.js");
 const {serviceModel,parameterModel,optionsModel}=require("../models/adminSchema.js");
+const { Customer, serviceProvider } = require("../models/usermodel.js");
+
 const addService=async(req,res)=>{
 var body=req.body;
 console.log(body);
@@ -11,7 +14,7 @@ const result=await serviceModel.create({
   Name:body.service_name,
   Image_url:body.Url
 })
-res.send(result);
+res.render("addService");
 }
 const addServiceParameters=async(req,res)=>{
   var body=req.body;
@@ -65,4 +68,48 @@ res.render("AdminAddOptions",{
   msg:"Data is submitted"
 });
 }
-module.exports={addService,addServiceParameters,addServiceOptions}
+
+const dashboard=async(req,res)=>{
+  // const service=req.params.service;
+  
+  const services = await serviceModel.find({})
+  const customers = await Customer.find({})
+  const serviceProviders=await serviceProvider.find({})
+  const bookedCustomer=await BookedCustomer.find({})
+  res.render("adminPanel",{
+    serviceLength:services.length,
+    customerLength:customers.length,
+    serviceProviderLength:serviceProviders.length,
+    bookedCustomerLength:bookedCustomer.length
+  })
+}
+
+const getServiceCategories=async(req,res)=>{
+let params=req.params.service;
+console.log(params)
+if(params=="service")
+{
+  const services=await serviceModel.find({})
+  console.log(services)
+  res.json(services)
+}
+if(params=="customer")
+{
+  const customers=await Customer.find({})
+  console.log(customers)
+  res.json(customers)
+}
+if(params=="serviceprovider")
+{
+  const serviceprovider=await serviceProvider.find({})
+  console.log(serviceprovider)
+  res.json(serviceprovider)
+}
+if(params=="bookedCustomer")
+{
+  const bookedcustomer=await BookedCustomer.find({})
+  console.log(bookedcustomer)
+  res.json(bookedcustomer)
+}
+}
+module.exports={addService,addServiceParameters,addServiceOptions,dashboard,getServiceCategories}

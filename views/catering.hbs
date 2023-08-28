@@ -6,34 +6,39 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Event Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
           <link rel="stylesheet" href="static/css/style.css">
 
   <link rel="stylesheet" href="../static/css/CateringForm.css">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg  navbar-dark py-3 mb-4">
-  <div class="container">
-    <a class="navbar-brand" href="#"><h3 class=" fw-bold text-white head px-3">Event Management</h3></a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link"  href="/signup"><h5>Sign Out</h5></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  
+{{>serviceProviderNavbar}}
+
 
   <div class="container  mt-0" >
     <div class="row ">
       <div class="col-4 m-auto cateringform">
      <form action="/catering" method="post" class="bg-white p-4 my-2 me-2">
 <h1 class="text-center">Fill Catering Fields</h1>
+  <div  id="locationDiv">
+      <label class="mb-2"><strong>Enter Location</strong></label>
+      <select name="Location"  class="form-select location" >
+        <option value="">Select Location</option>
+                 {{#each states}}
+                 <option value='{"Location":"{{this.name}}", "Latitude":"{{this.latitude}}", "Longitude":"{{this.longitude}}"}' >{{this.name}}</option>
+                 {{/each}}
+               </select>
+               <label class="mt-2"><strong>Price Per Km</strong></label>
+      <input class="form-control price form-control-sm" name="LocationPrice" type="text" aria-label=".form-control-sm example" onblur="priceValidation()">
+      <span class="text-danger span" id="LocationPrice" >*please enter a valid price</span>
+    </div>
+    
     <div class="data" id="preparationDiv" onchange="main()">
-      <label class="mb-2"><strong>Type of Preparation</strong></label>
+      <label class="mb-2 mt-2"><strong>Type of Preparation</strong></label>
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="Veg" name="TypeofPreparation" id="preparationVeg">
         <label class="form-check-label" for="preparationVeg">
@@ -41,7 +46,7 @@
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="Non veg" name="TypeofPreparation"
+        <input class="form-check-input" type="checkbox" value="Non Veg" name="TypeofPreparation"
           id="preparationNonVeg">
         <label class="form-check-label" for="preparationNonVeg">
           Non veg

@@ -4,28 +4,27 @@
 <head>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Event Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../static/css/style.css">
   <link rel="stylesheet" href="../static/css/adminPanel.css">
 </head>
+
 <body>
-{{!-- <div class="container-fluid"> --}}
- <nav class="navbar navbar-expand-lg  navbar-dark py-3">
-  <div class="container">
-    <a class="navbar-brand" href="#"><h3 class=" fw-bold text-white head px-3">Event Management</h3></a>
-    </div>
-  
-</nav>
-  
+
+  {{>adminNavbar}}
+ <div class="container-fluid">
   <div class="row mt-4">
-    <div class="col-md-2 mx-3 px-4" style="border:1px solid black;height:84vh">
+    <div class="col-md-2 ms-2 ps-3 border-end">
       <div class="header">
         <h4 class="title py-2" id="offcanvasLabel">Dashboard</h4>
       </div>
-      <div class="body mb-4" onclick="">
+      <div class="body mb-4" onclick="location.href='/admin/service'">
         Service Categories
       </div>
       <div class="body mb-4" onclick="location.href='/admin/dashboard/addService'">
@@ -37,78 +36,90 @@
       <div class="body mb-4" onclick="location.href='/admin/dashboard/addOptions'">
         Add Options
       </div>
-      <div class="body mb-4">
+      <div class="body mb-4" onclick="location.href='/admin/customer'">
         View Customers
       </div>
-      <div class="body mb-4">
+      <div class="body mb-4" onclick="location.href='/admin/serviceprovider'">
         View Service Provider
       </div>
+      <div class="body mb-4" onclick="location.href='/admin/bookedCustomer'">
+        View Customer Bookings
+      </div>
     </div>
-    <div class="col-9">
-  <div class="container cardsdiv text-right">
-      
-    <div class="card mb-3 me-4" style="max-width: 540px;">
-      <div class="row g-0">
-        <div class="col-md-6">
-          <img src="../static/images/services.jpg" width="100%" height="100%">
-        </div>
-        <div class="col-md-6">
-          <div class="card-body">
-            <h5 class="card-title">Services</h5>
+    <div class="col-9" style="min-height:80vh">
+      <div class="container mt-5 cardsdiv text-right" >
 
-          
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3  me-4" style="max-width: 540px;">
-      <div class="row h-100 g-0">
-        <div class="col-md-6 h-100" >
-          <img src="../static/images/customers.png" width="100%" height="100%" >
-        </div>
-        <div class="col-md-6">
-          <div class="card-body">
-            <h5 class="card-title">Customers</h5>
-                    
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3 me-4" style="max-width: 540px;">
-      <div class="row g-0 h-100">
-        <div class="col-md-6 h-100" >
-          <img src="../static/images/serviceprovider.jpg" width="100%" height="100%">
-        </div>
-        <div class="col-md-6">
-          <div class="card-body">
-            <h5 class="card-title">Service Provider</h5>
-           
-           
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3" style="max-width: 540px;">
-      <div class="row g-0 h-100">
-        <div class="col-md-4 h-100">
-          <img src="../static/images/bookservice.jpg" width="100%" height="100%">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">BookService</h5>
-          
-           
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-   
-    
-</div>
-{{!-- </div> --}}
+        <div class="card mb-3 me-4" style="max-width: 540px;">
+          <div class="row g-0 h-100 align-items-center">
+            <div class="col-md-5 h-100">
+              <img src="../static/images/services.jpg" width="100%" height="100%">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 class="card-title">Services</h5>
+                <p class="card-text text-center">{{serviceLength}}</p>
 
-  <script src="adminPanel.js"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3  me-4" style="max-width: 540px;">
+          <div class="row h-100 g-0 align-items-center">
+            <div class="col-md-6 h-100">
+              <img src="../static/images/customers.png" width="100%" height="100%">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Customers</h5>
+                <p class="card-text text-center">{{customerLength}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 me-4" style="max-width: 540px;">
+          <div class="row g-0 h-100 align-items-center">
+            <div class="col-md-4 h-100">
+              <img src="../static/images/serviceprovider.jpg" width="100%" height="100%">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Service Provider</h5>
+                <p class="card-text text-center">{{serviceProviderLength}}</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0 h-100 align-items-center">
+            <div class="col-md-5 h-100 ">
+              <img src="../static/images/bookservice.jpg" width="100%" height="100%">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 class="card-title">Book Service</h5>
+                 <p class="card-text text-center">{{bookedCustomerLength}}</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1 class="tabletitle text-center mt-4"></h1>
+      <table class="table ">
+        <thead>
+          <tr class="headrow"></tr>
+        </thead>
+        <tbody class="tbody">
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+  </div>
+  {{>footer}}
+
+  <script src="../../static/js/adminPanel.js"></script>
 </body>
 
 </html>

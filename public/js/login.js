@@ -54,15 +54,28 @@ function isRole()
 }
 function validateSubmit()
 {
-if((!emailValid()) && (!passwordValid()) && (!isRole()))
-{
-    e.preventDefault();
-    return false;
-}
+// if((!emailValid()) && (!passwordValid()) && (!isRole()))
+// {
+//     e.preventDefault();
+//     return false;
+// }
+// if((emailValid()) && (passwordValid()) && (isRole()))
+// {
+//     e.preventDefault();
+//    return true;
+    
+// }
 if((emailValid()) && (passwordValid()) && (isRole()))
 {
-    e.preventDefault();
-   return true;
-    
+  console.log("true")
+
+  return true;
+}
+else{
+  emailValid();
+  passwordValid();
+  isRole()
+    alert("Please provide the valid details")
+    return false;
 }
 }

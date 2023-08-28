@@ -6,6 +6,10 @@ const registerCatering=async(req,res)=>{
   await catering.create({
     Name:req.user.Name,
     ServiceAddedBy:req.user._id,
+    Location:{
+      value:JSON.parse(data.Location),
+      price:data.LocationPrice
+    },
     TypeOfPreparation:data.TypeofPreparation,
     TypeOfSpread:data.TypeOfSpread,
     SpreadBifurcation:{
@@ -49,6 +53,6 @@ const registerCatering=async(req,res)=>{
       price:data.Juice_Price
     }
   })
-  res.redirect("/services?service=catering")
+  res.redirect("/services?service=Catering")
 }
 module.exports={registerCatering}

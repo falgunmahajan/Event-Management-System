@@ -88,14 +88,29 @@ if(data.Role==='Customer')
 }
 const adminSignin=async(req,res)=>{
     const data=req.body;
-    const user=await admin.findOne({Email:data.Email,Password:data.Password})
+    console.log("h",data)
+    if(!data.Email || !data.Password)
+    {
+        res.render("adminLogin",{
+           emptymsg:true 
+        })
+    }
+    else
+ {   const user=await admin.findOne({Email:data.Email,Password:data.Password})
+ console.log("y",user)
     if(user)
     {
+        const token= setToken(user)
+        console.log(token)
+        res.cookie("id",token)
+        console.log("yes")
         res.redirect("/admin/dashboard")
     }
     else{
-        res.render("adminLogin")
-    }
+        res.render("adminLogin",{
+            errormsg:true 
+         })
+    }}
 }
 module.exports={
  signUp,signIn,adminSignin

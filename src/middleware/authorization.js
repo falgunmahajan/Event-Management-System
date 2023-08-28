@@ -16,8 +16,11 @@ else{
 }
 const loggedinServiceProvider=(req,res,next)=>{
     const token = req.cookies.id;
+    if(token)
+    {
     const user = getUser(token);
     req.user=user;
-    next();
+}
+next();
 }
 module.exports={isLogin,loggedinServiceProvider}

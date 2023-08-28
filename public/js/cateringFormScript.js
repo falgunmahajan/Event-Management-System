@@ -4,7 +4,6 @@ var regex = /^[0-9]+$/;
 
 function priceValidation() {
   price.forEach((item) => {
-    
     spans.forEach((item1) => {
       if (item.name === item1.id) {
         if (item.value && !regex.test(item.value)) {
@@ -18,7 +17,7 @@ function priceValidation() {
     });
   });
 }
-   
+   let locationDiv=document.querySelector(".location")
 
 function validation()
 {
@@ -32,15 +31,21 @@ function validation()
           count++;
         }
       });
-      if (count !== 1) {       
+      if (count !== 1) {   
+        console.log("hello")    
         isValidationPassed = false; 
       }
     });
-    
+    if(!locationDiv.value)
+    {
+      isValidationPassed = false;
+    }
         price.forEach(item=>
             { 
+              console.log(item.value)
                 if(!item.value)
-                {             
+                {   
+                  console.log("false")          
                 isValidationPassed = false; 
                     }
             })

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="VenueForm.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-4 mb-4">
+        <div class="row">
+       <div class="col-lg-5 m-auto border p-3">
+<form action="/decoration" method="post">
+<h1 class="text-center">Fill Dance Fields</h1>
+<div id="Dance_Style" class="data" onchange="main()">
+<label>
+<strong>
+    Dance Style
+</strong>
+</label>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Ballet" name="DanceStyle" id="Ballet">
+    <label class="form-check-label mb-2">
+    Ballet
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Hip Hop" name="DanceStyle" id="HipHop">
+    <label class="form-check-label mb-2">
+    Hip Hop
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Contemporary" name="DanceStyle" id="Contemporary">
+    <label class="form-check-label mb-2">
+        Contemporary
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Jazz" name="DanceStyle" id="Jazz">
+    <label class="form-check-label mb-2">
+    Jazz
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Ballroom" name="DanceStyle" id="Ballroom">
+    <label class="form-check-label mb-2">
+    Ballroom
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Latin" name="DanceStyle" id="Latin">
+    <label class="form-check-label mb-2">
+    Latin
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Bollywood" name="DanceStyle" id="Bollywood">
+    <label class="form-check-label mb-2">
+    Bollywood
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Street Dance" name="DanceStyle" id="StreetDance">
+    <label class="form-check-label mb-2">
+    Street Dance
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Tap" name="DanceStyle" id="Tap">
+    <label class="form-check-label mb-2">
+    Tap
+    </label>
+  </div>
+</div>
+<div id="AgeGroup" class="data" onchange="main()">
+  <label>
+    <strong>
+        Age Group
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Childern" name="AgeGroup" id="Childern">
+    <label class="form-check-label mb-2">
+    Childern
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Teenagers" name="AgeGroup" id="Teenagers">
+    <label class="form-check-label mb-2">
+        Teenagers
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Adults" name="AgeGroup" id="Adults">
+    <label class="form-check-label mb-2">
+    Adults
+    </label>
+  </div>
+  <!-- <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Rustic" name="Theme" id="Rustic">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Rustic
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Formal" name="Theme" id="Formal">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Formal
+    </label>
+  </div> -->
+  </div>
+  <div id="SkillLevel" class="data" onchange="main()">
+  <label>
+    <strong>
+      Skill Level  
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Beginners" name="SkillLevel" id="Beginners">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Beginners
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Intermediate" name="SkillLevel" id="Intermediate">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Intermediate
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Advanced" name="SkillLevel" id="Advanced">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Advanced
+    </label>
+  </div>
+  <!-- <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Classic" name="DecorationStyle" id="Classic">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Classic
+    </label>
+  </div> -->
+  </div>
+  <div id="GroupClasses" class="data" onchange="main()">
+  <label>
+    <strong>
+        Group Classes
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Yes" name="GroupClasses" id="GroupClasses_Yes">
+    <label class="form-check-label mb-2">
+    Yes
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="No" name="GroupClasses" id="GroupClasses_No">
+    <label class="form-check-label mb-2">
+    No
+    </label>
+  </div>
+  <label>
+    <strong>
+    Price
+    </strong>
+  </label>
+  <input class="form-control mb-2 price" type="text" placeholder="" name="VenueTypePrice" onblur="priceValidation()"aria-label="default input example"> 
+  <span class="text-danger span" id="VenueTypePrice">*please enter a valid price</span>
+  </div>
+
+  <div id="PrivateClasses" class="data" onchange="main()">
+    <label>
+      <strong>
+          Private Classes
+      </strong>
+    </label>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="Yes" name="PrivateClasses" id="PrivateClasses_Yes">
+      <label class="form-check-label mb-2">
+      Yes
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="No" name="PrivateClasses" id="PrivateClasses_No">
+      <label class="form-check-label mb-2">
+      No
+      </label>
+    </div>
+    <label>
+      <strong>
+      Price
+      </strong>
+    </label>
+    <input class="form-control mb-2 price" type="text" placeholder="" name="VenueTypePrice" onblur="priceValidation()"aria-label="default input example"> 
+    <span class="text-danger span" id="VenueTypePrice">*please enter a valid price</span>
+    </div>
+  <div id="Duration" class="data" onchange="main()">
+  <label>
+    <strong>
+        Duration of Classes
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="1 Hour" name="Duration" id="Duration1">
+    <label class="form-check-label mb-2">
+    1 Hour
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="2 Hour" name="Duration" id="Duration2">
+    <label class="form-check-label mb-2">
+    2 Hour
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="3 Hour" name="Duration" id="Duration3">
+    <label class="form-check-label mb-2">
+    3 Hour
+    </label>
+  </div>
+  <label>
+    <strong>
+    Price
+    </strong>
+  </label>
+  <input class="form-control mb-2 price" type="text" placeholder="" name="FlowersPrice" onblur="priceValidation()"aria-label="default input example"> 
+  <span class="text-danger span" id="FlowersPrice">*please enter a valid price</span>
+  </div>
+  <div id="Location" class="data" onchange="main()">
+    <label>
+        <strong>
+            Location
+        </strong>
+    </label>  
+    <input class="form-control " type="text" placeholder="" aria-label="default input example"
+onblur="Location()">
+<span class="text-danger span">*please enter a valid location</span>
+<label> 
+</div>
+
+
+  <!-- <div id="Candles" class="data" onchange="main()">
+  <label>
+    <strong>
+        Candles
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Yes" name="Candles" id="Candles_Yes">
+    <label class="form-check-label mb-2">
+    Yes
+    </label>   
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="No" name="Candles" id="Candles_No">
+    <label class="form-check-label mb-2" for="preparationJain">
+    No
+    </label>   
+  </div>
+  <label>
+    <strong>
+    Price
+    </strong>
+  </label>
+  <input class="form-control mb-2 price" type="text" placeholder="" name="CandlesPrice" onblur="priceValidation()"aria-label="default input example"> 
+  <span class="text-danger span" id="CandlesPrice">*please enter a valid price</span>
+  </div>
+  <div id="Vases" class="data" onchange="main()">
+  <label>
+    <strong>
+        Vases
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Yes" name="Vases" id="Vases_Yes">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Yes
+    </label>   
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="No" name="Vases" id="Vases_No">
+    <label class="form-check-label mb-2" for="preparationJain">
+    No
+    </label>   
+  </div>
+  <label>
+    <strong>
+    Price
+    </strong>
+  </label>
+  <input class="form-control mb-2 price" type="text" placeholder="" name="VasesPrice" onblur="priceValidation()"aria-label="default input example"> 
+  <span class="text-danger span" id="VasesPrice">*please enter a valid price</span>
+  </div>
+  <div id="Lighting" class="data" onchange="main()">
+  <label>
+    <strong>
+        Lighting
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Ambient Lighting" name="Lighting" id="AmbientLighting">
+    <label class="form-check-label mb-2">
+    Ambient Lighting
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Accent Lighting" name="Lighting" id="AccentLighting">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Accent Lighting
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Task Lighting" name="Lighting" id="TaskLighting">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Task Lighting
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Chandeliers" name="Lighting" id="Chandeliers">
+    <label class="form-check-label mb-2">
+    Chandeliers
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="String Lights" name="Lighting" id="StringLights">
+    <label class="form-check-label mb-2" for="preparationJain">
+    String Lights
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Uplighting" name="Lighting" id="Uplighting">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Uplighting
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Fairy Lights" name="Lighting" id="FairyLights">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Fairy Lights
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Spotlights" name="Lighting" id="Spotlights">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Spotlights
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Colored Lighting" name="Lighting" id="ColoredLighting">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Colored Lighting
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Candlelight" name="Lighting" id="Candlelight">
+    <label class="form-check-label mb-2">
+    Candlelight
+    </label>
+  </div>
+  <label>
+    <strong>
+    Price
+    </strong>
+  </label>
+  <input class="form-control mb-2 price" type="text" placeholder="" name="LightingPrice" onblur="priceValidation()"aria-label="default input example"> 
+  <span class="text-danger span" id="LightingPrice">*please enter a valid price</span>
+</div>
+  <div id="TableClothes" class="data" onchange="main()">
+  <label>
+    <strong>
+        TableClothes
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Yes" name="TableClothes" id="TableClothes_Yes">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Yes
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="No" name="TableClothes" id="TableClothes_No">
+    <label class="form-check-label mb-2" for="preparationJain">
+    No
+    </label>
+  </div>
+  <label>
+    <strong>
+    Price
+    </strong>
+  </label>
+  <input class="form-control mb-2 price" type="text" placeholder="" name="TableClothesPrice" onblur="priceValidation()"aria-label="default input example"> 
+  <span class="text-danger span" id="TableClothesPrice">*please enter a valid price</span>
+</div>
+  <div id="ChairCovers" class="data" onchange="main()">
+  <label>
+    <strong>
+        Chair Covers
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Yes" name="Chair_Covers" id="Chair_Covers_Yes">
+    <label class="form-check-label mb-2" for="preparationJain">
+        Yes
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="No" name="Chair_Covers" id="Chair_Covers_No">
+    <label class="form-check-label mb-2" for="preparationJain">
+        No
+    </label>
+  </div>
+  <label>
+    <strong>
+    Price
+    </strong>
+  </label>
+  <input class="form-control mb-2 price" type="text" placeholder="" name="Chair_CoversPrice" onblur="priceValidation()"aria-label="default input example"> 
+  <span class="text-danger span" id="Chair_CoversPrice">*please enter a valid price</span>
+</div>
+  <div id="Napkins" class="data" onchange="main()">
+  <label>
+    <strong>
+        Napkins
+    </strong>
+  </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Yes" name="Napkins" id="Napkins_Yes">
+    <label class="form-check-label mb-2" for="preparationJain">
+        Yes
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="No" name="Napkins" id="Napkins_No">
+    <label class="form-check-label mb-2">
+        No
+    </label>
+  </div>
+  <label>
+    <strong>
+    Price
+    </strong>
+  </label>
+  <input class="form-control mb-2 price" type="text" placeholder="" name="NapkinsPrice" onblur="priceValidation()"aria-label="default input example"> 
+  <span class="text-danger span" id="NapkinsPrice">*please enter a valid price</span>
+</div>
+  <div id="Sitting" class="data" onchange="main()">
+  <label>
+    <strong>
+       Sitting Arrangements
+    </strong>
+  </label>
+ 
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Chairs and Tables" name="Sitting_Arrangements" id="ChairsTables">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Chairs and Tables
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Sofa and Tables" name="Sitting_Arrangements" id="SofaTables">
+    <label class="form-check-label mb-2" for="preparationJain">
+   Sofa and Tables
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Chairs and Table and Sofa" name="Sitting_Arrangements" id="ChairsTableSofa">
+    <label class="form-check-label mb-2" for="preparationJain">
+    Chairs and Table and Sofa
+    </label>
+  </div>
+  <label>
+    <strong>
+    Price
+    </strong>
+  </label>
+  <input class="form-control mb-2 price" type="text" placeholder="" name="SittingPrice" onblur="priceValidation()"aria-label="default input example"> 
+  <span class="text-danger span" id="SittingPrice">*please enter a valid price</span>
+</div> -->
+<div class="savebtn text-center ">
+  <button type="submit" onclick="return validation()" class="btn btn-primary savebtn w-50 mt-4">Submit</button>
+</div>
+</div>
+</div>
+</div>
+</form>
+<script src="DecorationForm.js"></script>
+</body>
+</html>

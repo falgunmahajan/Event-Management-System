@@ -26,13 +26,16 @@ const schema=new mongoose.Schema({
     Password:{
         type:String,
         required:true
+    },
+    Service:{
+        type:String
     }
 })
 const admin =new mongoose.model("admin",adminSchema)
 const serviceProvider=new mongoose.model("Service Provider",schema);
 const Customer=new mongoose.model("Customer",schema)
-admin.create({
-    Email:"admin@gmail.com",
-    Password:"admin"
-})
+// admin.create({
+//     Email:"admin@gmail.com",
+//     Password:"admin"
+// })
 module.exports={serviceProvider,Customer,admin}

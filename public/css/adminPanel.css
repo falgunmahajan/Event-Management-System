@@ -13,6 +13,8 @@ padding-top:90px;
 }
 .mainDiv 
 {
+    background-image: url(../Images/footerBackground.jpeg);
+background-size:cover;
 border:1px solid black; 
 border-radius:5px;
 margin:auto;
